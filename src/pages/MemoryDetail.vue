@@ -1,16 +1,18 @@
 <template>
     <base-layout :page-title="loadmemory ? loadmemory.title : 'loading...'" back-to-memory-page='/memories'>
         <h2 v-if="!loadmemory">There is no memory exist</h2>
-        <h2 v-else>memory found</h2>
+        <memory-overview v-else :title="loadmemory.title" :image="loadmemory.image" :desc="loadmemory.desc" />
     </base-layout>
 </template>
 
 <script>
 import BaseLayout from '@/components/base/BaseLayout.vue'
+import MemoryOverview from '../components/memories/MemoryOverview.vue'
 
 export default {
     components:{
-        BaseLayout
+        BaseLayout,
+        MemoryOverview
     },
     data(){
         return {
