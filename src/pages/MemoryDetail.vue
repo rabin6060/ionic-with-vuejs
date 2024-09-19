@@ -23,9 +23,11 @@ export default {
         }
     },
     watch: {
-        '$route'(currentRoute){
-            this.currentId = currentRoute.params.id;
-            console.log(currentRoute);
+        '$route.params.id': {
+            immediate: true, // Executes the handler when the component is mounted
+            handler(newId) {
+            this.currentId = newId;
+            }
         }
     }
 }
