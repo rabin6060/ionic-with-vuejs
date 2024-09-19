@@ -9,6 +9,9 @@
                 <ion-title>
                     {{pageTitle}}
                 </ion-title>
+                <ion-buttons slot="end">
+                    <slot name="actions-end"/>
+                </ion-buttons>
             </ion-toolbar>
             
         </ion-header>
